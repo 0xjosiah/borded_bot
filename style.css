@@ -4,6 +4,8 @@
 }
 
 body {
+    background: linear-gradient(rgb(88, 88, 88), white);
+    background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -28,13 +30,29 @@ a:focus {
     color: orange;
 }
 
+table {
+    display: flex;
+    justify-content: center;
+    text-align: start;
+}
+
+.align-right {
+    text-align: end;
+}
+
 .container {
     text-align: center;
     margin: 5em auto;
-    background: linear-gradient(45deg, red, blue, orange);
+    /* background: linear-gradient(grey, white); */
     padding: 3em;
     color: #fff;
     max-width: 600px;
+}
+
+.fun {
+    background: linear-gradient(65deg, red, blue, orange);
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .btn {

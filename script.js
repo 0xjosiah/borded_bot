@@ -5,8 +5,9 @@ const ideaFetch = () => {
             let whatToDo = document.getElementById('whatToDo')
             console.log(data)
             whatToDo.innerHTML = printActivity(data)
+            document.body.classList.add('fun')
         })
-    }
+}
 
 
 const getIdeaBtn = document.getElementById('idea-btn')
@@ -15,7 +16,7 @@ getIdeaBtn.addEventListener('click', ideaFetch)
 
 function printActivity(data) {
     const { accessibility, activity, key, link, participants, price, type } = data
-    const displayLink = (link == "") ? '' : `<td>Link: </td><td><a href=${link} target="_blank">${link}</a></td>`
+    const displayLink = (link == "") ? '' : `<td>Link: </td><td class="align-right"><a href=${link} target="_blank">${link}</a></td>`
     const displayType = type.replaceAll('"', '')
     const displayPrice = priceify(price)
     return `
@@ -23,19 +24,19 @@ function printActivity(data) {
             <table>
                 <tr>
                     <td>Type: </td>
-                    <td>${displayType}</td>
+                    <td class="align-right">${displayType}</td>
                 </tr>
                 <tr>
                     <td>Accessibility: </td>
-                    <td>${accessibility}</td>
+                    <td class="align-right">${accessibility}</td>
                 </tr>
                 <tr>
                     <td>Participants: </td>
-                    <td>${participants}</td>
+                    <td class="align-right">${participants}</td>
                 </tr>
                 <tr>
                     <td>Price: </td>
-                    <td>${displayPrice}</td>
+                    <td class="align-right">${displayPrice}</td>
                 </tr>
                 <tr>
                     ${displayLink}
